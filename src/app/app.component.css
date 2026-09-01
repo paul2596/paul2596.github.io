@@ -81,7 +81,6 @@ html {
   display: block;
   width: 100%;
   min-height: 560px;
-  max-height: 720px;
   object-fit: cover;
 }
 
