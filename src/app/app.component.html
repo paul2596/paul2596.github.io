@@ -1,9 +1,9 @@
-<nav class="nav">
+<nav class="site-nav">
   <div class="container">
     <div class="nav-container ">
       <div></div>
       <div>
-        <a href="https://www.linkedin.com/in/vinit-paul-2a72b7143/" class="btn header-text" target="_blank"
+        <a href="https://www.linkedin.com/in/vinit-paul/" class="btn header-text" target="_blank"
           rel="noopener noreferrer"><span><img [src]=linkedinmagePath alt="" class="contact-img"></span></a>
         <a href="https://github.com/paul2596" class="btn header-text" target="_blank"
           rel="noopener noreferrer"><span><img [src]=gitimagePath alt="" class="contact-img"></span></a>
@@ -92,7 +92,7 @@
                   <li *ngIf="showMoreTurbineItems">Executed directional analysis to examine the impact of various features on power prediction during wind flow over land and sea.</li>
                   <li *ngIf="showMoreTurbineItems">Deployed trained models using Flask (Python backend) and AngularJS for interactive frontend interactions in a web-based environment.</li>
                 </ul>
-                <button (click)="toggleTurbineItems()">View {{ showMoreTurbineItems ? 'Less' : 'More' }}</button>
+                <button type="button" class="btn btn-outline-dark btn-sm project-toggle" (click)="toggleTurbineItems()">View {{ showMoreTurbineItems ? 'Less' : 'More' }}</button>
                 <a href="https://github.com/paul2596/oswt_app" class="btn btn-primary margin-top-10" target="_blank"
                   rel="noopener noreferrer">Visit GitHub Repo</a>
               </div>
@@ -100,7 +100,7 @@
             <div class="col-lg-4 col-md-12 col-sm-12">
               <div class="card project-card">
                 <h6>Built Visualization Dashboards to get Insights on the Spread of an Airborne Disease in Manchester
-                  from Simulated Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                  from Simulated Data</h6>
                 <div class="ratio ratio-16x9">
                   <img src="/assets/data-viz.png" alt="">
                 </div>
@@ -112,7 +112,7 @@
                   <li *ngIf="showMoreVizItems">Addressed visualization needs, incorporating Gestalt design principles and color-blind-friendly palettes.</li>
                   <li *ngIf="showMoreVizItems">Enhanced user experience by implementing customized filters using the Haversine equation for radial disease spread based on regional coordinates.</li>
                 </ul>
-                <button (click)="toggleVizItems()">View {{ showMoreVizItems ? 'Less' : 'More' }}</button>
+                <button type="button" class="btn btn-outline-dark btn-sm project-toggle" (click)="toggleVizItems()">View {{ showMoreVizItems ? 'Less' : 'More' }}</button>
                 <a href="https://github.com/paul2596/data_visualization_sep_2022" class="btn btn-primary margin-top-10" target="_blank"
                   rel="noopener noreferrer">Visit GitHub Repo</a>
               </div>
@@ -133,7 +133,7 @@
                   <li *ngIf="showMoreHackathonItems">Preprocessed the raw data and managed the data using PostgreSQL</li>
                   <li *ngIf="showMoreHackathonItems">Presented the methodology used and outcome to the organizers</li>
                 </ul>
-                <button (click)="toggleHackathonItems()">View {{ showMoreHackathonItems ? 'Less' : 'More' }}</button>
+                <button type="button" class="btn btn-outline-dark btn-sm project-toggle" (click)="toggleHackathonItems()">View {{ showMoreHackathonItems ? 'Less' : 'More' }}</button>
                 <a href="https://github.com/paul2596/Data-Science-Hackathon" class="btn btn-primary margin-top-10" target="_blank"
                   rel="noopener noreferrer">Visit GitHub Repo</a>
               </div>
@@ -409,8 +409,7 @@
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="card bachelor-proj">
-              <h6>Design and Development of an ATV
-                (2016)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+              <h6>Design and Development of an ATV (2016)</h6>
               <div class="ratio ratio-16x9 margin-bottom-10">
                 <img src="/assets/atv-img.jpg" alt="">
               </div>
@@ -604,8 +603,7 @@
       <div class="col-lg-4 col-md-12 col-sm-12">
         <div class="card education-card">
           <p>2014 - 2018</p>
-          <p><b> B.Tech in Mechanical Engineering
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+          <p><b>B.Tech in Mechanical Engineering</b>
           </p>
           <p>Reva University</p>
           <p class="text-14">Grade:<b>Distinction</b></p>

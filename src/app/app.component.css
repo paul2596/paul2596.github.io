@@ -162,7 +162,7 @@
   height: 500px;
 }
 
-.nav {
+.site-nav {
   padding: 0.5rem 0;
   background-color: #222;
   position: sticky;
@@ -613,3 +613,508 @@
 .ul-text{
   color: black;
 }
+
+/* =========================================================
+   Responsive portfolio UI fixes
+   ========================================================= */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #fff;
+  color: #222;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section {
+  overflow-x: clip;
+}
+
+.section > .container {
+  padding-inline: 1rem;
+}
+
+/* Navigation */
+.site-nav {
+  width: 100%;
+}
+
+.nav-container {
+  min-height: 44px;
+}
+
+.nav-container > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-container .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.55rem;
+}
+
+/* Hero */
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+.image-container .header-img {
+  display: block;
+  width: 100%;
+  height: clamp(340px, 58vw, 620px);
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.overlay-text {
+  inset: 0;
+  transform: none;
+  width: 100%;
+  height: 100%;
+  padding: clamp(1rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.speech-bubble {
+  min-width: 0;
+  width: min(92vw, 560px);
+  max-width: 560px;
+  position: relative;
+  right: auto !important;
+  bottom: auto !important;
+  padding: 0.85rem 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  line-height: 1.45;
+}
+
+.bubble-position {
+  right: auto !important;
+  bottom: auto !important;
+}
+
+/* Section spacing */
+.section-title {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.alternate-section-background {
+  background-color: #f4f5f7;
+}
+
+/* Tabs + project controls */
+.project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 0;
+  margin-bottom: 1rem;
+}
+
+.project-tabs .nav-item {
+  flex: 1 1 280px;
+}
+
+.project-tabs .nav-link {
+  width: 100%;
+  text-align: center;
+  border-radius: 0.45rem;
+  cursor: pointer;
+}
+
+.projects-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.projects-button-row .btn {
+  margin-right: 0;
+}
+
+/* Cards */
+.card,
+.skill-card {
+  border: 0;
+  overflow: hidden;
+}
+
+.project-card,
+.work-exp-card,
+.bachelor-proj,
+.education-card {
+  min-height: 0;
+  height: 100%;
+}
+
+.row > [class*="col-"] {
+  margin-bottom: 1.25rem;
+}
+
+.row > [class*="col-"] > .card {
+  height: 100%;
+}
+
+.project-card,
+.bachelor-proj,
+.work-exp-card,
+.education-card {
+  padding: 1rem;
+}
+
+.project-card h6,
+.bachelor-proj h6 {
+  line-height: 1.45;
+}
+
+.ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proj-list-height {
+  min-height: 0;
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+}
+
+/* Skills */
+.sub-three-grid-cards {
+  gap: 0.75rem;
+}
+
+.skill-card {
+  margin-right: 0;
+  min-height: 86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Hobbies */
+.hobbies-img {
+  flex: 0 0 82px;
+  object-fit: cover;
+}
+
+.flex-row.card {
+  align-items: center;
+}
+
+/* Footer */
+footer {
+  padding: 1.25rem 0;
+  background: #222;
+  color: #fff;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+/* Existing custom grid fallbacks */
+@media (max-width: 991.98px) {
+  .grid-cards,
+  .two-grid-cards,
+  .work-exp-grid,
+  .hobbies-grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sub-three-grid-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .image-container .header-img {
+    height: clamp(320px, 62vw, 520px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section.section-md.py-5 {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+
+  .image-container .header-img {
+    height: 430px;
+    object-position: 58% center;
+  }
+
+  .overlay-text {
+    align-items: flex-end;
+    padding: 1rem;
+  }
+
+  .speech-bubble {
+    width: 100%;
+    max-width: 520px;
+    font-size: 0.95rem;
+  }
+
+  .project-tabs .nav-item {
+    flex-basis: 100%;
+  }
+
+  .projects-button-row {
+    flex-direction: column;
+  }
+
+  .projects-button-row .btn {
+    width: 100%;
+  }
+
+  .sub-three-grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    min-height: 72px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .image-container .header-img {
+    height: 380px;
+  }
+
+  .speech-bubble {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .card {
+    border-radius: 0.55rem;
+  }
+
+  .hobbies-img {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+  }
+
+  .hobbies-btn {
+    margin-top: 0.35rem;
+  }
+}
+
+/* Accessibility: do not animate indefinitely for users who request less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .speech-bubble.float {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   Portfolio UI refinements v2
+   ========================================================= */
+
+/* Header nav is intentionally separate from Bootstrap's .nav/.nav-tabs. */
+.site-nav {
+  padding: 0.45rem 0;
+  background: rgba(28, 28, 28, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.18);
+}
+
+.site-nav .container {
+  max-width: 1140px;
+}
+
+.project-tabs {
+  position: static;
+  top: auto;
+  z-index: auto;
+  padding: 0;
+  background: transparent !important;
+}
+
+/* Keep content width and rhythm consistent throughout the long page. */
+.section > .container {
+  max-width: 1140px;
+}
+
+.section-title {
+  position: relative;
+  width: fit-content;
+  padding-bottom: 0.55rem;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin: 0.55rem auto 0;
+  background: #222;
+  border-radius: 999px;
+}
+
+/* Project panel should not look like one giant nested Bootstrap card. */
+.projects-tab-card {
+  min-height: 0;
+  padding: clamp(0.85rem, 2vw, 1.35rem);
+  background: #fff;
+}
+
+.projects-tab-card > div {
+  min-width: 0;
+}
+
+/* Better spacing between media and text/actions. */
+.project-card .ratio,
+.bachelor-proj .ratio {
+  margin-top: 0.75rem;
+}
+
+.project-card .btn,
+.bachelor-proj .btn {
+  align-self: flex-start;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .proj-list-height {
+  flex: 1 1 auto;
+}
+
+.project-toggle {
+  margin-top: auto;
+  margin-bottom: 0.15rem;
+}
+
+/* Timeline inherited text alignment/width can become awkward on small screens. */
+.timeline-one .timeline-item {
+  overflow-wrap: anywhere;
+}
+
+.timeline-one ul {
+  padding-left: 1.2rem;
+}
+
+/* More readable card surfaces without forcing fixed heights. */
+.card {
+  border: 1px solid rgba(34, 34, 34, 0.08);
+  box-shadow: 0 6px 20px rgba(20, 20, 20, 0.09);
+}
+
+.card:hover {
+  box-shadow: 0 8px 26px rgba(20, 20, 20, 0.12);
+}
+
+.work-exp-card,
+.education-card {
+  padding: 1.15rem;
+}
+
+/* Don't allow long links / labels to stretch cards. */
+.card,
+.card li,
+.card p,
+.card a,
+.card h5,
+.card h6 {
+  overflow-wrap: anywhere;
+}
+
+/* Make rows line up without manual non-breaking spaces. */
+.education-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hobbies: prevent button/link overflow on narrow devices. */
+.flex-row.card {
+  gap: 0.25rem;
+}
+
+.custom-card-body {
+  min-width: 0;
+}
+
+.hobbies-btn {
+  white-space: normal;
+}
+
+/* Consistent accessible focus treatment for links/buttons. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(34, 34, 34, 0.35);
+  outline-offset: 2px;
+}
+
+/* Phone refinements */
+@media (max-width: 575.98px) {
+  .site-nav .container {
+    padding-inline: 0.65rem;
+  }
+
+  .nav-container {
+    justify-content: flex-end;
+  }
+
+  .project-tabs {
+    gap: 0.4rem;
+  }
+
+  .project-tabs .nav-link {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .projects-tab-card {
+    padding: 0.7rem;
+  }
+
+  .project-card,
+  .bachelor-proj,
+  .work-exp-card,
+  .education-card {
+    padding: 0.85rem;
+  }
+
+  .timeline-one .timeline-item {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .flex-row.card {
+    align-items: flex-start;
+  }
+
+  .custom-card-body {
+    padding-left: 0.7rem;
+  }
+}
+
