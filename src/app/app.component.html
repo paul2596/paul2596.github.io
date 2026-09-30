@@ -10,68 +10,108 @@
       </div>
 
     </div>
-
   </div>
 </nav>
-<div class="section section-md py-5 padding-0">
+
+<section id="top" class="hero-section">
   <div class="image-container">
-    <img [src]=imagePath alt="" class="header-img">
-    <!-- <div class="overlay-text"><h4 class="header-text">Hi, I'm Vinit Paul </h4>
-    <div><span  class="header-text">Data Scientist | Full Stack Web Developer</span></div>
-    </div> -->
-    <div class="overlay-text">
-      <div class="speech-bubble round float bubble-position">
-        <div>Hi, I'm Vinit Paul </div>
-        <div>Data Scientist | Full Stack Web Developer</div>
-
+    <img [src]="imagePath" alt="Vinit Paul portfolio" class="header-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-copy">
+        <span class="hero-kicker">Hello, I'm</span>
+        <h1>Vinit Paul</h1>
+        <h2>AI Developer | Data Scientist | LLM Research | Applied Machine Learning</h2>
+        <p>
+          I build AI systems that connect language models with enterprise knowledge, engineering data and predictive models.
+          My work spans RAG, semantic retrieval, knowledge graphs, MCP, NLP, machine learning and research software development.
+        </p>
+        <div class="hero-tags">
+          <span>Large Language Models</span>
+          <span>RAG</span>
+          <span>Machine Learning</span>
+          <span>Knowledge Graphs</span>
+          <span>MCP</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#experience" class="btn btn-outline-light">Work Experience</a>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
 
+<section class="section section-md py-5 intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <span class="eyebrow">Profile</span>
+        <h2>Applied machine learning and LLM research for real-world engineering</h2>
+      </div>
+      <div>
+        <p>
+          Data Scientist and AI Researcher with an MSc in Data Science specialising in Artificial Intelligence and experience
+          working across academic research, industrial AI and enterprise software. My current KTP work focuses on secure LLM
+          applications, retrieval systems and knowledge integration for engineering decision support.
+        </p>
+        <p>
+          I am particularly interested in how language models represent, retrieve and transform information, including research
+          into natural-language interaction with engineering knowledge, 3D/CAD generation and physics-informed predictive models.
+        </p>
+      </div>
+    </div>
+    <div class="metric-grid">
+      <div class="metric-card">
+        <strong>&lt; 1 min</strong>
+        <span>AI-assisted costing time reduced from approximately 16 minutes per product</span>
+      </div>
+      <div class="metric-card">
+        <strong>2024–2026</strong>
+        <span>KTP research in LLMs, NLP, data integration and engineering AI</span>
+      </div>
+      <div class="metric-card">
+        <strong>Distinction</strong>
+        <span>MSc Data Science with Specialisation in Artificial Intelligence</span>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section id="projects" class="section section-md py-5 alternate-section-background">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Selected Work</span>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-desc">Research and applied projects across LLMs, machine learning, data science and engineering.</p>
     </div>
 
-  </div>
-</div>
-<!-- Projects  -->
-<div class="section section-md py-5">
-  <h2 class="section-title">Projects</h2>
-  <div class="container">
-    <ul class="nav nav-tabs project-tabs ">
+    <ul class="nav nav-tabs project-tabs">
       <li class="nav-item">
         <a class="nav-link padding-12"
           [ngClass]="{'project-tab-active': selectedTabButton=='Masters', 'project-tab-inactive': selectedTabButton!='Masters'}"
-          (click)="selectTab('Masters')">Data Science Projects</a>
+          (click)="selectTab('Masters')">AI & Data Science</a>
       </li>
       <li class="nav-item">
         <a class="nav-link padding-12"
           [ngClass]="{'project-tab-active': selectedTabButton=='Bachelors', 'project-tab-inactive': selectedTabButton!='Bachelors'}"
-          (click)="selectTab('Bachelors')">Analysis Projects-Mechanical Engineering</a>
+          (click)="selectTab('Bachelors')">Mechanical Engineering</a>
       </li>
     </ul>
-    <div class="card projects-tab-card">
-      <!--Masters Projects-->
+
+    <div class="projects-panel">
       <div [hidden]="selectedTabButton!='Masters'">
         <div class="projects-button-row">
-          <button class="btn btn-primary" (click)="selectButton('Pinned Projects')"
-            [ngClass]="{'button-custom-color': selectedButton=='Pinned Projects', 'not-selected': selectedButton!='Pinned Projects'}">Project
-            Highlights</button>
-          <button class="btn btn-primary" (click)="selectButton('All Projects')"
-            [ngClass]="{'button-custom-color': selectedButton=='All Projects', 'not-selected': selectedButton!='All Projects'}">All
-            Project Details
+          <button class="btn btn-primary"
+            (click)="selectButton('Pinned Projects')"
+            [ngClass]="{'button-custom-color': selectedButton=='Pinned Projects', 'not-selected': selectedButton!='Pinned Projects'}">
+            Project Highlights
           </button>
-          <!-- <button class="btn btn-primary" (click)="selectButton('Exploratory Data Analysis')"
-            [ngClass]="{'button-custom-color': selectedButton=='Exploratory Data Analysis', 'not-selected': selectedButton!='Exploratory Data Analysis'}">Exploratory
-            Data Analysis</button>
-          <button class="btn btn-primary" (click)="selectButton('Visualization')"
-            [ngClass]="{'button-custom-color': selectedButton=='Visualization', 'not-selected': selectedButton!='Visualization'}">Visualization</button>
-          <button class="btn btn-primary" (click)="selectButton('Machine Learning')"
-            [ngClass]="{'button-custom-color': selectedButton=='Machine Learning', 'not-selected': selectedButton!='Machine Learning'}">Machine
-            Learning</button>
-          <button class="btn btn-primary" (click)="selectButton('Deep Learning')"
-            [ngClass]="{'button-custom-color': selectedButton=='Deep Learning', 'not-selected': selectedButton!='Deep Learning'}">Deep
-            Learning</button>
-          <button class="btn btn-primary" (click)="selectButton('Image Processing')"
-            [ngClass]="{'button-custom-color': selectedButton=='Image Processing', 'not-selected': selectedButton!='Image Processing'}">Image
-            Processing</button> -->
+          <button class="btn btn-primary"
+            (click)="selectButton('All Projects')"
+            [ngClass]="{'button-custom-color': selectedButton=='All Projects', 'not-selected': selectedButton!='All Projects'}">
+            Project Timeline
+          </button>
         </div>
         <div [hidden]="selectedButton!='Pinned Projects'">
           <div class="row">
@@ -138,274 +178,181 @@
                   rel="noopener noreferrer">Visit GitHub Repo</a>
               </div>
             </div>
-          </div>
-
+            <p>
+              Designed a Fourier-transform-based denoising approach and evaluated it against established spatial and wavelet methods.
+            </p>
+            <ul>
+              <li>Analysed frequency spectra across different noise levels.</li>
+              <li>Compared Mean, Median, BayesShrink and VisuShrink methods using MSE and SSIM.</li>
+            </ul>
+            <a href="https://github.com/paul2596/Image-Denoising-in-Frequency-Domain-dec_2022" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </article>
         </div>
-        <div [hidden]="selectedButton!='All Projects'">
-          <div class="row">
-            <div class="col-md-4 text-center mx-auto margin-top-10">
-              <h4>
-                Projects Timeline
-              </h4>
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-md-10 mx-auto">
-              <!-- Timeline -->
-              <div class="timeline timeline-one">
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item">
-                  <h5 class="my-3">
-                    May-August 2023: </h5>
-                  <h5>Analyzed the Impact of Using Additional Weather Information on the Accuracy of Power Production
-                    Models
-                    for
-                    Offshore Wind Turbines</h5>
-                  <ul class="text-justify">
-                    <li>Collaborated closely with supervisors from the <b>National Innovation Center for
-                      Data,
-                      UK</b>
-                      and <b>Equinor, Norway,</b> in the execution of the project.</li>
-                    <li>Carried out an comprehensive analysis to study impact of additional atmospheric features and
-                      atmospheric stability parameter like Obukhov Length by combining data from the turbine and weather
-                      information from climate reanalysis data generated from numerical weather prediction models .</li>
-                    <li>A directional analysis was carried out to study influence of features on power prediction when
-                      wind
-                      flows across land and across sea.</li>
-                    <li>The trained models were then deployed using flask framework with python for backend and
-                      AngularJS to
-                      perform interactions at the front end.</li>
-                  </ul>
-                  <div class="center-align">
-                    <a href="https://github.com/paul2596/oswt_app" class="btn btn-primary" target="_blank"
-                      rel="noopener noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item">
-                  <h5 class="my-3">April 2023</h5>
-                  <h5 class="my-3"> Participated and Won the Data Science Hackathon organized by Newcastle University
-                  </h5>
-                  <ul class="text-justify">
-                    <li>Scraped data for a set of companies from various sources like public linkedin profiles, public
-                      registries</li>
-                    <li>Accumulated data pertaining to company specialities, technology, capital, shares and other
-                      information
-                    </li>
-                    <li>Preprocessed the raw data and managed the data using PostgreSQL</li>
-                    <li>Presented the methodology used and outcome to the organizers</li>
-                  </ul>
-                  <div class="center-align">
-                    <a href="https://github.com/paul2596/Data-Science-Hackathon" class="btn btn-primary" target="_blank"
-                      rel="noopener noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-                <!-- Timeline Item 3 -->
-                <div class="timeline-item">
-                  <h5 class="my-3">March 2023</h5>
-                  <h5 class="my-3">Analyzed employment data for a Care Home</h5>
-                  <ul class="text-justify">
-                    <li>Explored various features to understand the factors influencing hiring decisions.</li>
-                    <li>Developed a predictive model for estimating the expected years of service.</li>
-                    <li>Developed a Power BI dashboard for interactive data visualization.</li>
-                    <li>Deployed the Power BI dashboard on a Shiny application for reporting and stakeholder
-                      accessibility.</li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">February 2023</h5>
-                  <h5 class="my-3">Fine Grained Image Classification</h5>
-                  <ul class="text-justify">
-                    <li>Used transfer learning techniques to develop and fine-tune models for the precise classification
-                      of visually similar bird species. </li>
-                    <li>Implemented models like Xception with pre-trained weights, also used parallel configurations of
-                      models like VGG-16 for the classification task.</li>
-                  </ul>
-                  <div class="center-align">
-                    <a href="https://github.com/paul2596/fine_grained_image_classifier" class="btn btn-primary"
-                      target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">February 2023</h5>
-                  <h5 class="my-3">Generated Images using CycleGAN</h5>
-                  <ul class="text-justify">
-                    <li>Used preprocessing techniques to enhance image quality and performed data augmentation</li>
-                    <li>Used keras based CycleGAN model which was then trained and tuned on celebrity images to stylize
-                      and transform
-                      image to a cat/dog</li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">January 2023</h5>
-                  <h5 class="my-3">Sci-Fi Text Generation</h5>
-                  <ul class="text-justify">
-                    <li>Prepared a cleaning algorithm based on the template of the Sci-Fi novel being trained on to
-                      remove irrelevant text.</li>
-                    <li>Designed a text generation algorithm utilizing LSTM and GRU based networks which could be tuned
-                      based on a
-                      randomness factor</li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">January 2023</h5>
-                  <h5 class="my-3">Scalable Analysis of NYC Taxi Rides Using Apache Spark and Zonal Analysis on Neo4J
-                  </h5>
-                  <ul class="text-justify">
-                    <li>Combined the power of Apache Spark for scalable data processing and Neo4j Graph Database for
-                      graph analytics on the NYC Taxi rides dataset.</li>
-                    <li>Utilized Spark's parallel processing capabilities for efficient data preprocessing.</li>
-                    <li>Built a pipeline to carry out all the preprocessing tasks on different dataset sizes ranging
-                      from 3M to 130M taxi rides.</li>
-                    <li>Evaluated and showcased the performance of the Spark code on datasets</li>
-                    <li>Also studied the profitability and passenger volumes in different trips which were used to
-                      create graph nodes representing trip start and end zones in Neo4J.</li>
-                    <li>Plotted a heat map to visualize the most used, least used, and profitable zones.</li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">December 2022</h5>
-                  <h5 class="my-3">Analyzed Datasets Related to US Road Traffic Accidents to Predict the Severity Using
-                    Machine Learning</h5>
-                  <ul class="text-justify">
-                    <li>Performed preprocessing like normalization, feature selection, class imbalance correction using
-                      SMOTE</li>
-                    <li>Built several machine learning models using Logistic regression, KNN, Random Forest</li>
-                    <li>Performed Kfold Cross validation and hyperparameter</li>
-                    <li>Identified best performing model by comparing test accuracies</li>
-                  </ul>
-                </div>
 
-                <div class="timeline-item">
-                  <h5 class="my-3">December 2022</h5>
-                  <h5 class="my-3">Image Denoising in Frequency Domain Using Fourier Transform Based Algorithm</h5>
-                  <ul class="text-justify">
-                    <li>Performed preprocessing to normalize and resize images.</li>
-                    <li>Built an algorithm to denoise image in frequency domain by analyzing power spectrum for
-                      different noise levels</li>
-                    <li>Created a pipeline to handle denoising for different noise levels for unseen images</li>
-                    <li>Compared the performance of the custom algorithm with well established methods like mean,
-                      median, Bayes, Visushrink using metrics like MSE, SSIM </li>
-                  </ul>
-                  <div class="center-align">
-                    <a href="https://github.com/paul2596/Image-Denoising-in-Frequency-Domain-dec_2022"
-                      class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">November 2022</h5>
-                  <h5 class="my-3">Analyzed data from Massive Open Online Courses (MOOCs) offered by Newcastle
-                    University on
-                    FutureLearn</h5>
-                  <ul class="text-justify">
-                    <li>Conducted in-depth analysis of a Massive Open Online Course (MOOC) offered by Newcastle
-                      University on FutureLearn.</li>
-                    <li>Investigated learner engagement, demographics, course content effectiveness, assessment
-                      performance, time-based trends, technology usage(desktop/mobile), feedback analysis.</li>
-                    <li>Followed best industrial practices in data analysis by adhering to the CRISP-DM process.</li>
-                    <li>Successfully built a pipeline to preprocess, analyze and generate reports using R programming
-                      with a CRISP-DM framework</li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">October 2022</h5>
-                  <h5 class="my-3">Breast Cancer Classifier</h5>
-                  <ul class="text-justify">
-                    <li>Developed a breast cancer classifier to distinguish between malignant and benign tumors.</li>
-                    <li>Conducted thorough data preprocessing and cleaning to ensure data quality.</li>
-                    <li>Used Best Subset Selection method to identify the most relevant features for classification.
-                    </li>
-                    <li>Constructed classifiers using different methods like Logistic Regression with Lasso penalty and
-                      Linear Discriminant Analysis.</li>
-                    <li>Evaluated test errors for each classifier to assess their performance.</li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">September 2022</h5>
-                  <h5 class="my-3">Statstical Analysis on Penguin Species for Non-Invasive Gender Identification</h5>
-                  <ul class="text-justify">
-                    <li>Employed EDA techniques for dataset understanding.</li>
-                    <li>Explored relationships between features.</li>
-                    <li>Formulated hypotheses for gender differentiation.</li>
-                    <li>Used graphs and charts for effective visual communication.</li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <h5 class="my-3">September 2022</h5>
-                  <h5 class="my-3">Built Visualization Dashboards to get Insights on the Spread of an Airborne Disease
-                    in
-                    Manchester from Simulated Data</h5>
-                  <ul class="text-justify">
-                    <li>Pre-processed and transformed data obtained from outputs of supercomputer simulations from
-                      Defence Science
-                      and Technology Laboratory (DSTL) and Public Health England(PHE).</li>
-                    <li>Developed interactive dashboards to communicate data patterns effectively.</li>
-                    <li>Addressed visualization needs, incorporating Gestalt design principles and color-blind-friendly palettes.</li>
-                    <li>Enhanced user experience by implementing customized filters using the Haversine equation for radial disease spread based on regional coordinates.</li>
-                  </ul>
-                  <div class="center-align">
-                    <a href="https://github.com/paul2596/data_visualization_sep_2022" class="btn btn-primary"
-                      target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-                  </div>
-                </div>
-              </div>
-              <!--End of Timeline-->
+        <div [hidden]="selectedButton!='All Projects'" class="timeline-wrap">
+          <div class="timeline-one">
+            <div class="timeline-item">
+              <div class="timeline-date">July 2024 – September 2026</div>
+              <h3>Applied AI & LLM Research — Knowledge Transfer Partnership</h3>
+              <p><b>Teesside University & PSI Global Ltd.</b></p>
+              <ul>
+                <li>Developed enterprise AI solutions using LLMs, NLP and RAG for engineering applications.</li>
+                <li>Built hybrid retrieval using Solr, vector search, semantic ranking and Neo4j knowledge graphs.</li>
+                <li>Developed APIs, MCP services, ETL pipelines and enterprise connectors for structured and unstructured data.</li>
+                <li>Reduced an engineering costing workflow from approximately 16 minutes to under one minute per product.</li>
+                <li>Investigated local/private LLM deployment, LLM-assisted CAD/3D generation and physics-informed ML integration.</li>
+                <li>Experimented with prompt curation, feedback-driven optimisation and RLHF-related techniques.</li>
+              </ul>
             </div>
-          </div>
-        </div>
-        <div [hidden]="selectedButton!='Image Processing'">
-          <div class="grid-cards">
-            <div class="card bachelor-proj">
-              <h6>Image Denoising in Frequency Domain Using Fourier Transform Based Algorithm</h6>
-              <div class="ratio ratio-16x9 ">
-                <img src="/assets/image-processing.png" alt="">
-              </div>
-              <a href="https://github.com/paul2596/oswt_app" class="btn btn-primary" target="_blank"
-                rel="noopener noreferrer">GitHub Repo</a>
+
+            <div class="timeline-item">
+              <div class="timeline-date">May – August 2023</div>
+              <h3>Machine Learning for Offshore Wind Power Modelling</h3>
+              <ul>
+                <li>Integrated turbine measurements with atmospheric data from climate reanalysis and numerical weather prediction models.</li>
+                <li>Designed and compared regression models and investigated the effect of atmospheric stability on model performance.</li>
+                <li>Conducted directional analysis to compare wind conditions across land and sea.</li>
+                <li>Deployed trained models using Flask and AngularJS.</li>
+              </ul>
+              <a href="https://github.com/paul2596/oswt_app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">April 2023</div>
+              <h3>Newcastle University Data Science Hackathon — 1st Place</h3>
+              <ul>
+                <li>Collected company information from public registries, websites and public online sources.</li>
+                <li>Built automated data collection and preprocessing pipelines and managed the resulting data in PostgreSQL.</li>
+                <li>Presented the methodology and outcomes to the organisers.</li>
+              </ul>
+              <a href="https://github.com/paul2596/Data-Science-Hackathon" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">March 2023</div>
+              <h3>Employment Data Analysis</h3>
+              <ul>
+                <li>Investigated factors influencing hiring decisions and developed a predictive model for expected years of service.</li>
+                <li>Built a Power BI dashboard and deployed reporting through a Shiny application.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">February 2023</div>
+              <h3>Fine-Grained Image Classification</h3>
+              <ul>
+                <li>Applied transfer learning to distinguish visually similar bird species.</li>
+                <li>Trained and tuned Xception and VGG-16-based model configurations.</li>
+              </ul>
+              <a href="https://github.com/paul2596/fine_grained_image_classifier" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">February 2023</div>
+              <h3>CycleGAN Image Generation</h3>
+              <ul>
+                <li>Prepared and augmented image data for generative modelling.</li>
+                <li>Trained and tuned a Keras-based CycleGAN for image-domain transformation.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">January 2023</div>
+              <h3>Sci-Fi Text Generation</h3>
+              <ul>
+                <li>Prepared and cleaned long-form text for sequence modelling.</li>
+                <li>Developed LSTM- and GRU-based text generation models with tunable output randomness.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">January 2023</div>
+              <h3>Scalable NYC Taxi Analytics using Apache Spark & Neo4j</h3>
+              <ul>
+                <li>Built scalable preprocessing pipelines for datasets ranging from 3M to 130M taxi rides.</li>
+                <li>Combined Spark processing with Neo4j graph analytics for trip-zone profitability and passenger-volume analysis.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">December 2022</div>
+              <h3>Road Traffic Accident Severity Prediction</h3>
+              <ul>
+                <li>Applied normalisation, feature selection and SMOTE to prepare imbalanced data.</li>
+                <li>Compared Logistic Regression, KNN and Random Forest models using cross-validation and test performance.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">December 2022</div>
+              <h3>Image Denoising in the Frequency Domain</h3>
+              <ul>
+                <li>Built a Fourier-transform-based denoising pipeline for multiple noise levels.</li>
+                <li>Compared performance with mean, median and wavelet methods using MSE and SSIM.</li>
+              </ul>
+              <a href="https://github.com/paul2596/Image-Denoising-in-Frequency-Domain-dec_2022" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">November 2022</div>
+              <h3>MOOC Learner Analytics using CRISP-DM</h3>
+              <ul>
+                <li>Analysed FutureLearn learner engagement, demographics, assessment performance and course-content effectiveness.</li>
+                <li>Built an R-based preprocessing, analysis and reporting workflow using the CRISP-DM framework.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">October 2022</div>
+              <h3>Breast Cancer Classification</h3>
+              <ul>
+                <li>Applied feature selection and built classification models using Logistic Regression with Lasso and Linear Discriminant Analysis.</li>
+                <li>Compared classifier test errors to evaluate model performance.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">September 2022</div>
+              <h3>Statistical Analysis for Non-Invasive Penguin Sex Identification</h3>
+              <ul>
+                <li>Used exploratory analysis, feature relationships and hypothesis testing to investigate non-invasive predictors.</li>
+                <li>Communicated findings through statistical visualisations.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">September 2022</div>
+              <h3>Airborne Disease Simulation Visualisation</h3>
+              <ul>
+                <li>Processed outputs from supercomputer simulations associated with DSTL and Public Health England.</li>
+                <li>Developed interactive Power BI dashboards and radial-distance filters using the Haversine equation.</li>
+              </ul>
+              <a href="https://github.com/paul2596/data_visualization_sep_2022" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
             </div>
           </div>
         </div>
       </div>
-      <!--Bachelors Projects-->
-      <div [hidden]="selectedTabButton!='Bachelors'">
-        <div class="row">
-          <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="card bachelor-proj">
-              <h6>
-                Analysis of the Effectiveness of HVOF Coating on Turbine and Boiler Materials Subjected to Hot Corrosion
-                (2018)</h6>
-              <div class="ratio ratio-16x9 margin-bottom-10">
-                <img src="/assets/hvof-image.png" alt="">
-              </div>
-              <ul class="ul-text">
-                <li>Visualized weight changes across cycles helped understand material behavior.</li>
-                <li>Identified surface composition changes through XRD(X-Ray Diffraction) and cluster analysis.</li>
-                <li>Carried out Analysis on the SEM(Scanning Electron Microscope) data revealing topography changes.
-                </li>
-                <li>Co-authored a research paper published in the International Journal for Science and Advance Research
-                  In Technology.</li>
-              </ul>
-              <a href="https://ijsart.com/Content/PDFDocuments/IJSARTV4I523511.pdf" class="btn btn-primary"
-                target="_blank" rel="noopener noreferrer">View Report</a>
-            </div>
+
+      <div [hidden]="selectedTabButton!='Bachelors'" class="mechanical-grid">
+        <article class="card bachelor-proj">
+          <div class="project-meta"><span>2018</span><span>Research</span></div>
+          <h3>HVOF Coating for Turbine & Boiler Materials</h3>
+          <div class="ratio ratio-16x9 project-image">
+            <img src="/assets/hvof-image.png" alt="HVOF coating analysis">
           </div>
-          <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="card bachelor-proj">
-              <h6>Design, Analysis and Fabrication of an Electric Solar Vehicle (2017)</h6>
-              <div class="ratio ratio-16x9 margin-bottom-10">
-                <img src="/assets/solar-car-img.PNG" alt="">
-              </div>
-              <ul class="ul-text">
-                <li>Used SolidWorks for comprehensive design and structural analysis.</li>
-                <li>Analyzed to identify potential failure sites, which were refined over several iterations, thus
-                  improving the design and raising the Factor of Safety.</li>
-                <li>Presented the analysis findings to stakeholders to obtain design approval for the solar vehicle.
-                </li>
-                <li>Participated in a national level competition organized by Imperial Society of Innovative Engineers
-                  (ISIEINDIA), where the fabricated vehicle was subjected to different types of testing to assess the
-                  vehicles performance, stability and reliability.</li>
-              </ul>
-            </div>
+          <ul>
+            <li>Analysed material weight changes across hot-corrosion test cycles.</li>
+            <li>Investigated surface composition using XRD and analysed SEM data for topographical changes.</li>
+            <li>Co-authored a research paper in the International Journal for Science and Advance Research in Technology.</li>
+          </ul>
+          <a href="https://ijsart.com/Content/PDFDocuments/IJSARTV4I523511.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Report</a>
+        </article>
+
+        <article class="card bachelor-proj">
+          <div class="project-meta"><span>2017</span><span>Design & Analysis</span></div>
+          <h3>Electric Solar Vehicle</h3>
+          <div class="ratio ratio-16x9 project-image">
+            <img src="/assets/solar-car-img.PNG" alt="Electric solar vehicle">
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12">
             <div class="card bachelor-proj">
@@ -424,180 +371,210 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-
-
-  </div>
-</div>
-
-<!--Work Experience-->
-<div class="section section-md py-5 alternate-section-background">
-  <h2 class="section-title">Work Experience</h2>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="card work-exp-card">
-          <h5>Data Science Research Assistant</h5>
-          <i>Part Time</i>
-          <p>Aug 2023</p>
-          <div class="divider"></div>
-          <div class="chip"><a href="https://www.ncl.ac.uk/" target="_blank" rel="noopener noreferrer"
-              class="work-exp-web">Newcastle University</a></div>
-          <ul class="work-details-font">
-            <li>Worked as a Research Assistant, actively contributing to the development of a prototype for an analysis dashboard proposed to an esteemed organization. </li>
-            <li>Built automated web scrapers using selenium in python for data extraction.</li>
-            <li>Preprocessed and managed data using python and PostgreSQL.</li>
-            <li>Carried out various NLP based analysis to extract insights on the raw data like clustering, LDA (Latent
-              Discriminant Analysis).</li>
-            <li>Built a standalone application based on Flask Framework and presented the analysis on the web application by integrating analysis from python and dashboards from
-              PowerBI </li>
+          <ul>
+            <li>Contributed to roll-cage design and analysis for structural integrity and safety.</li>
+            <li>Identified suspension mounting points and supported vehicle fabrication.</li>
+            <li>Participated in testing and iterative refinement for performance, reliability and safety.</li>
           </ul>
-        </div>
+        </article>
       </div>
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="card work-exp-card">
-          <h5>Full Stack Web Developer</h5>
-          <i>Full time</i>
-          <p>2018 - 2021</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section section-md py-5">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Career</span>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+
+    <div class="experience-stack">
+      <article class="card work-exp-card current-role">
+        <div class="experience-header">
+          <div>
+            <span class="role-date">July 2024 – September 2026</span>
+            <h3>KTP Associate — Data Scientist / AI Developer</h3>
+            <div class="company-name">Teesside University & PSI Global Ltd.</div>
+          </div>
+          <span class="role-badge">Applied AI Research</span>
+        </div>
+        <div class="divider"></div>
+        <ul class="work-details-font">
+          <li>Research and development of secure enterprise AI solutions using LLMs, NLP, machine learning and engineering data.</li>
+          <li>Designed RAG architectures combining Solr, vector search, semantic retrieval and Neo4j knowledge graphs.</li>
+          <li>Developed APIs, MCP services, ETL pipelines and enterprise connectors, including SharePoint integration.</li>
+          <li>Built AI-assisted costing and analytics workflows, including a process that reduced costing time from approximately 16 minutes to under one minute per product.</li>
+          <li>Explored LLM-assisted CAD/3D generation, integration of physics-informed machine-learning outputs and feedback-driven LLM optimisation.</li>
+          <li>Worked with academic supervisors, engineers, domain experts and senior stakeholders to translate research questions into deployable AI solutions.</li>
+        </ul>
+      </article>
+
+      <div class="experience-grid">
+        <article class="card work-exp-card">
+          <div class="experience-header">
+            <div>
+              <span class="role-date">August 2023</span>
+              <h3>Data Science Research Assistant</h3>
+              <a href="https://www.ncl.ac.uk/" target="_blank" rel="noopener noreferrer" class="company-link">Newcastle University</a>
+            </div>
+            <span class="role-badge">Research</span>
+          </div>
           <div class="divider"></div>
-          <div class="chip"><a href="https://www.tcs.com/" target="_blank" rel="noopener noreferrer"
-              class="work-exp-web">Tata Consultancy Services</a></div>
           <ul class="work-details-font">
-            <li>Developed applications utilizing a tech stack that included, Java, AngularJS, HTML, CSS, Spring,
-              Hibernate, PostgreSQL, NoSQL (Solr), and Git, following Agile methodology.</li>
-            <li>Developed a streamlined job opportunity portal, built interactive tools for agile productivity,
-              implemented and maintained functionalities for a application showcasing company products.</li>
-            <li>Improved the user experience by enhancing the feedback system for the application.</li>
-            <li>Implemented access governance mechanisms within application services, ensuring security, for role based
-              access to end users. </li>
-            <li>Built interactive dashboards accessible by stakeholders for visual insights on application rating, user
-              traffic and other stats.</li>
-            <!-- <li>Collaborated with stakeholders, gathered requirements, and ensured timely delivery. Played a key role in onboarding and training new team members.</li> -->
+            <li>Developed Python-based data collection pipelines using automated web scraping across multiple public sources.</li>
+            <li>Preprocessed and managed heterogeneous data using Python and PostgreSQL.</li>
+            <li>Applied NLP methods including clustering and Latent Dirichlet Allocation (LDA) to identify themes and operational characteristics.</li>
+            <li>Developed a Flask-based application integrating Python analysis, company profiles and Power BI dashboards.</li>
           </ul>
-        </div>
-      </div>
+        </article>
 
-    </div>
-  </div>
-</div>
-<!--Skills-->
-<div class="section section-md py-5">
-  <h2 class="section-title">Skills & Awards</h2>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div>
-          <div class="chip">Skills</div>
-          <div class="sub-three-grid-cards">
-            <div class="new-col">
-              <div class="skill-card">
-                <div><img [src]=pythonImagePath alt="" class="skills-img"></div>
-                <div class="card-title">Python</div>
-                <!-- <div class="progress--cover">
-                  <div class="html--progress"></div>
-                </div> -->
-              </div>
-              <div class="skill-card">
-                <div><img [src]=powerbiImagePath alt="" class="skills-img"></div>
-                <div class="card-title">Power BI</div>
-              </div>
-              <div class="skill-card">
-                <div><img [src]=rImagePath alt="" class="skills-img"></div>
-                <div class="card-title">R</div>
-              </div>
-
-              <div class="skill-card">
-                <div><img [src]=javaImagePath alt="" class="skills-img"></div>
-                <div class="card-title">Java</div>
-              </div>
-              <div class="skill-card">
-                <div><img [src]=tensorflowImagePath alt="" class="skills-img"></div>
-                <div class="card-title">Tensorflow</div>
-              </div>
+        <article class="card work-exp-card">
+          <div class="experience-header">
+            <div>
+              <span class="role-date">September 2018 – October 2021</span>
+              <h3>Full Stack Web Developer</h3>
+              <a href="https://www.tcs.com/" target="_blank" rel="noopener noreferrer" class="company-link">Tata Consultancy Services</a>
             </div>
-            <div class="new-col">
-              <div class="skill-card">
-                <div><img [src]=pysparkImagePath alt="" class="skills-img"></div>
-                <div class="card-title">PySpark</div>
-              </div>
-              <div class="skill-card">
-                <img [src]=scikitlearnImagePath alt="" class="skills-img">
-                <div class="card-title">scikit learn</div>
-              </div>
-              <div class="skill-card">
-                <img [src]=matplotlibImagePath alt="" class="skills-img">
-                <div class="card-title">Matplotlib</div>
-              </div>
-              <div class="skill-card">
-                <img [src]=cssImagePath alt="" class="skills-img">
-                <div class="card-title">CSS</div>
-              </div>
-              <div class="skill-card">
-                <img [src]=angularImagePath alt="" class="skills-img">
-                <div class="card-title">Angular</div>
-              </div>
-            </div>
-            <div class="new-col">
-
-              <div class="skill-card">
-                <img [src]=postgresqlImagePath alt="" class="skills-img">
-                <div class="card-title">PostgreSQL </div>
-              </div>
-              <div class="skill-card">
-                <img [src]=tableauImagePath alt="" class="skills-img">
-                <div class="card-title">Tableau</div>
-              </div>
-              <div class="skill-card">
-                <img [src]=flaskImagePath alt="" class="skills-img">
-                <div class="card-title">Flask</div>
-              </div>
-              <div class="skill-card">
-                <img [src]=htmlflowImagePath alt="" class="skills-img">
-                <div class="card-title">HTML</div>
-              </div>
-              <div class="skill-card">
-                <img [src]=gitImagePath alt="" class="skills-img">
-                <div class="card-title">GIT</div>
-              </div>
-            </div>
+            <span class="role-badge">Software Engineering</span>
           </div>
-        </div>
-
-
-
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div>
-          <div class="chip">Awards</div>
-
-          <div class="card margin-bottom-5">
-            <p>2023</p>
-            <p><b>Won a Data Science Hackathon</b> - Newcastle University</p>
-          </div>
-          <div class="card margin-bottom-5">
-            <p>2020</p>
-            <p><b>Special Initiative Award</b> - Tata Consultancy Services</p>
-          </div>
-        </div>
+          <div class="divider"></div>
+          <ul class="work-details-font">
+            <li>Developed enterprise applications using Java, Spring, Hibernate, AngularJS, PostgreSQL, Solr and Git within Agile teams.</li>
+            <li>Contributed to Prime, an internal enterprise platform supporting collaboration, knowledge sharing, Agile delivery and internal career opportunities.</li>
+            <li>Worked extensively on Prime Work, developing sprint dashboards, backlog views and Agile productivity tools for monitoring delivery.</li>
+            <li>Contributed to Hubs, which organised domain-specific blogs, software assets, learning content, events and organisational knowledge.</li>
+            <li>Developed functionality for Prime Lead, an internal opportunity portal for discovering, applying for and tracking leadership roles.</li>
+            <li>Led implementation of secure file-protection functionality and developed stakeholder dashboards for application usage and feedback analytics.</li>
+          </ul>
+        </article>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!--Education-->
-<div class="section section-md py-5 alternate-section-background">
-  <h2 class="section-title">Education</h2>
+<section id="skills" class="section section-md py-5 alternate-section-background">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-12 col-sm-12">
-        <div class="card education-card">
-          <p>2022 - 2023</p>
-          <p><b>MSc in Data Science (with Specialization in AI)</b> </p>
+    <div class="section-heading">
+      <span class="eyebrow">Capabilities</span>
+      <h2 class="section-title">Research & Technical Skills</h2>
+    </div>
+
+    <div class="skills-grid">
+      <article class="card skill-group">
+        <h3>Large Language Models & NLP</h3>
+        <div class="skill-chip-wrap">
+          <span>Large Language Models</span>
+          <span>Generative AI</span>
+          <span>RAG</span>
+          <span>Prompt Engineering</span>
+          <span>LangChain</span>
+          <span>LlamaIndex</span>
+          <span>Ollama</span>
+          <span>ChromaDB</span>
+          <span>Semantic Search</span>
+          <span>Vector Search</span>
+          <span>RLHF Experiments</span>
+          <span>Latent Dirichlet Allocation</span>
+        </div>
+      </article>
+
+      <article class="card skill-group">
+        <h3>Machine Learning & Data Science</h3>
+        <div class="skill-chip-wrap">
+          <span>Python</span>
+          <span>scikit-learn</span>
+          <span>TensorFlow</span>
+          <span>Regression</span>
+          <span>Classification</span>
+          <span>Transfer Learning</span>
+          <span>Feature Engineering</span>
+          <span>Model Evaluation</span>
+          <span>Statistical Analysis</span>
+          <span>Physics-Informed ML</span>
+          <span>R</span>
+          <span>PySpark</span>
+        </div>
+      </article>
+
+      <article class="card skill-group">
+        <h3>Knowledge, Data & Retrieval</h3>
+        <div class="skill-chip-wrap">
+          <span>Neo4j</span>
+          <span>Cypher</span>
+          <span>Knowledge Graphs</span>
+          <span>PostgreSQL</span>
+          <span>SQL</span>
+          <span>Solr</span>
+          <span>Vector Databases</span>
+          <span>Structured Data</span>
+          <span>Unstructured Data</span>
+          <span>ETL Pipelines</span>
+        </div>
+      </article>
+
+      <article class="card skill-group">
+        <h3>AI & Research Engineering</h3>
+        <div class="skill-chip-wrap">
+          <span>Model Context Protocol</span>
+          <span>REST APIs</span>
+          <span>Flask</span>
+          <span>Docker</span>
+          <span>Cloud Deployment</span>
+          <span>SharePoint Integration</span>
+          <span>Role-Based Access</span>
+          <span>Local LLM Deployment</span>
+          <span>Git</span>
+          <span>Power BI</span>
+        </div>
+      </article>
+
+      <article class="card skill-group">
+        <h3>Software Development</h3>
+        <div class="skill-chip-wrap">
+          <span>Java</span>
+          <span>Spring</span>
+          <span>Hibernate</span>
+          <span>Angular</span>
+          <span>JavaScript</span>
+          <span>HTML</span>
+          <span>CSS</span>
+        </div>
+      </article>
+
+      <article class="card skill-group">
+        <h3>Research & Professional</h3>
+        <div class="skill-chip-wrap">
+          <span>Interdisciplinary Research</span>
+          <span>Stakeholder Management</span>
+          <span>Knowledge Transfer</span>
+          <span>Technical Reporting</span>
+          <span>Research Communication</span>
+          <span>Project Delivery</span>
+          <span>Requirements Analysis</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-md py-5">
+  <div class="container">
+    <div class="two-column-section">
+      <div>
+        <div class="section-heading align-left">
+          <span class="eyebrow">Recognition</span>
+          <h2>Awards</h2>
+        </div>
+        <div class="card recognition-card">
+          <span class="recognition-year">2023</span>
+          <h3>1st Place — Data Science Hackathon</h3>
           <p>Newcastle University</p>
-          <p class="text-14">Grade:<b>Distinction</b></p>
+        </div>
+        <div class="card recognition-card">
+          <span class="recognition-year">2020</span>
+          <h3>Special Initiative Award</h3>
+          <p>Tata Consultancy Services</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-12 col-sm-12">
@@ -608,77 +585,87 @@
           <p>Reva University</p>
           <p class="text-14">Grade:<b>Distinction</b></p>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-12 col-sm-12">
-        <div class="card education-card">
-          <p>2012 - 2014</p>
-          <p><b>Pre-University - Physics, Chemistry, Mathematics, Computer Science</b></p>
-          <p>St. Josephs Pre University College</p>
-          <p class="text-14">Grade:<b>Distinction</b></p>
+        <div class="card recognition-card">
+          <h3>Microsoft Certified: Azure Data Scientist Associate</h3>
+        </div>
+        <div class="card recognition-card">
+          <h3>Google Data Analytics Professional Certificate</h3>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!--Hobbies and Interests-->
-<div class="section section-md py-5">
-  <h2 class="section-title">Hobbies and Interests</h2>
+<section id="education" class="section section-md py-5 alternate-section-background">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="card flex-row">
-          <img [src]=runningImagePath alt="" class="hobbies-img">
-          <div class="card-body custom-card-body">
-            <span class="card-title h5 h4-sm">Running</span>
-            <div>
-              <a href="https://www.runtastic.com/user/dd4d5e31-cacf-3c45-02d2-6e99a86d8a9d"
-                class="btn btn-primary hobbies-btn" target="_blank" rel="noopener noreferrer">Adidas Running</a>
-              <a href="https://www.strava.com/athletes/10106337" class="btn btn-primary hobbies-btn" target="_blank"
-                rel="noopener noreferrer">Strava</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="card flex-row">
-          <img [src]=gamingImagePath alt="" class="hobbies-img">
-          <div class="card-body custom-card-body">
-            <span class="card-title h5 h4-sm">Gaming</span>
-            <div>
-              <a href="https://steamcommunity.com/id/paul_jr/" class="btn btn-primary hobbies-btn" target="_blank"
-                rel="noopener noreferrer">Steam Profile</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="card flex-row">
-          <img [src]=booksImagePath alt="" class="hobbies-img">
-          <div class="card-body custom-card-body">
-            <span class="card-title h5 h4-sm">Reading</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 col-sm-12">
-        <div class="card flex-row">
-          <img [src]=bingeImagePath alt="" class="hobbies-img">
-          <div class="card-body custom-card-body">
-            <span class="card-title h5 h4-sm">Binge-watching</span>
-            <div>
-              <a href="https://mydramalist.com/list/47a0jxNL" class="btn btn-primary hobbies-btn" target="_blank"
-                rel="noopener noreferrer">K-Drama List</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="section-heading">
+      <span class="eyebrow">Academic Background</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="education-grid">
+      <article class="card education-card">
+        <span class="education-date">2022 – 2023</span>
+        <h3>MSc Data Science</h3>
+        <p class="education-specialism">Specialisation in Artificial Intelligence</p>
+        <p>Newcastle University</p>
+        <span class="grade-pill">Distinction</span>
+      </article>
+      <article class="card education-card">
+        <span class="education-date">2014 – 2018</span>
+        <h3>B.Tech Mechanical Engineering</h3>
+        <p>Reva University</p>
+        <span class="grade-pill">8.6/10 GPA · Distinction</span>
+      </article>
+      <article class="card education-card">
+        <span class="education-date">2012 – 2014</span>
+        <h3>Pre-University</h3>
+        <p>Physics, Chemistry, Mathematics & Computer Science</p>
+        <p>St. Joseph's Pre-University College</p>
+        <span class="grade-pill">Distinction</span>
+      </article>
     </div>
   </div>
-</div>
+</section>
+
+<section class="section section-md py-5">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Outside Work</span>
+      <h2 class="section-title">Hobbies & Interests</h2>
+    </div>
+    <div class="hobbies-grid">
+      <article class="card hobby-card">
+        <img [src]="runningImagePath" alt="Running" class="hobbies-img">
+        <div>
+          <h3>Running</h3>
+          <a href="https://www.strava.com/athletes/10106337" class="text-link" target="_blank" rel="noopener noreferrer">Strava</a>
+        </div>
+      </article>
+      <article class="card hobby-card">
+        <img [src]="gamingImagePath" alt="Gaming" class="hobbies-img">
+        <div>
+          <h3>Gaming</h3>
+          <a href="https://steamcommunity.com/id/paul_jr/" class="text-link" target="_blank" rel="noopener noreferrer">Steam Profile</a>
+        </div>
+      </article>
+      <article class="card hobby-card">
+        <img [src]="booksImagePath" alt="Reading" class="hobbies-img">
+        <div><h3>Reading</h3></div>
+      </article>
+      <article class="card hobby-card">
+        <img [src]="bingeImagePath" alt="Film and television" class="hobbies-img">
+        <div>
+          <h3>Film & Television</h3>
+          <a href="https://mydramalist.com/list/47a0jxNL" class="text-link" target="_blank" rel="noopener noreferrer">K-Drama List</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <div class="container footer-text">
-    &copy;Developed and Maintained by Vinit Paul
+  <div class="container footer-content">
+    <span>© Vinit Paul</span>
+    <span>AI · Data Science · Research Engineering</span>
   </div>
 </footer>
