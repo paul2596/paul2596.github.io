@@ -4,31 +4,28 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [
+        AppComponent
+      ],
     }).compileComponents();
   });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    expect(fixture.componentInstance).toBeTruthy();
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
 
   it(`should have as title 'vinitpaul-github-io'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    expect(fixture.componentInstance.title).toEqual('vinitpaul-github-io');
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('vinitpaul-github-io');
   });
 
-  it('should render the portfolio sections', () => {
+  it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-
     const compiled = fixture.nativeElement as HTMLElement;
-    const headings = Array.from(compiled.querySelectorAll('h2'))
-      .map((heading) => heading.textContent?.trim());
-
-    expect(headings).toContain('Projects');
-    expect(headings).toContain('Work Experience');
-    expect(headings).toContain('Skills & Awards');
-    expect(headings).toContain('Education');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('vinitpaul-github-io app is running!');
   });
 });
